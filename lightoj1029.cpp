@@ -44,8 +44,6 @@ const ll N=110;
 ll n, par[N];
 
 vector <edge> e;
-//vector <pair<ll,ll> > g[N];
-//vector <ll> eTaken;
 
 ll find (ll x){
 	if(par[x]==x) return x;
@@ -64,9 +62,6 @@ ll kruskal(bool ok){
 			par[u]=v;
 			ll w=e[i].w;
 			sum+=w;
-//			eTaken.pb(i);
-//			g[e[i].u].pb(MP(e[i].v,w));
-//			g[e[i].v].pb(MP(e[i].u,w));
 			c++;
 			if(c==n-1) break;
 		}
@@ -89,7 +84,6 @@ int main()
         ll good=kruskal(1);
         ll bad =kruskal(0);
         ll total=good+bad;
-      //  debug3(good,bad,g);
         if(total%2==0) printf("Case %lld: %lld\n",cs,total/2);
         else printf("Case %lld: %lld/2\n",cs,total);
     }
